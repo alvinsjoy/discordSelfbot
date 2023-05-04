@@ -1,0 +1,20 @@
+{
+  "name": "belajar-node",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@discordjs/voice": "^0.16.0",
+    "cleverbot-free": "^1.1.12",
+    "discord.js": "^12.0.0",
+    "discord.js-selfbot-v13": "^2.13.2",
+    "express": "^4.17.3",
+    "ffmpeg-static": "^5.1.0"
+  }
+}
