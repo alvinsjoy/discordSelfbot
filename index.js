@@ -11,7 +11,7 @@ client.on('messageCreate', message => {
   if(message.author.id === "825382504353234954") {
     switch(message.content.toUpperCase()) {
         case '!RESET':
-            message.channel.send('Resetting...')
+            message.react('✔️')
               .then(msg => client.destroy())
               .then(() => client.login(process.env.TOKEN)
               .then(message.channel.send('Reboot Success!')));
@@ -27,7 +27,7 @@ client.on('messageCreate', async (message) => {
  user.send('hello world');
 });
     }*/
-    if (message.author.id === '1094099312528597013'|| !message.content) {
+    if (message.author.id === '1094099312528597013' || !message.content) {
       return
     }
     else {
@@ -55,26 +55,32 @@ client.on('ready', () => {
       client.user.setStatus(sta)
     }*/
   console.log(client.user,activity,status);
-  client.channels.fetch('864093845569667082')
-  .then(channel => 
-    channel.sendSlash('302050872383242240', 'bump'));
+  /*try {
+    client.channels.fetch('864093845569667082')
+    .then(channel => 
+      channel.sendSlash('302050872383242240', 'bump'));
+  } catch (err) {
+    console.error(err)
+    return
+  }*/
   //client.user.setActivity(status, { type: activity, url: "https://www.twitch.tv/discord"})
 }, 5000)
 client.channels.fetch('882568040678559825')
   .then(channel => 
     channel.send('Hello!'));
 const r = new Discord.SpotifyRPC(client)
-    .setAssetsLargeImage("spotify:ab67616d0000b273c7d6fe09dfe4af1580e59705") // Image ID
-        .setAssetsSmallImage("spotify:ab67616d0000b2738863bc11d2aa12b54f5aeb36") // Image ID
-        .setAssetsLargeText('Achan indo myre?') // Album Name
-        .setState('Your mom') // Artists
-        .setDetails('I love kids') // Song name
+    .setAssetsLargeImage("spotify:ab67616d0000b2738ad8f5243d6534e03b656c8b") // Image ID
+        //.setAssetsSmallImage("spotify:ab67616d0000b2738863bc11d2aa12b54f5aeb36") // Image ID
+        .setAssetsLargeText('Starboy (Deluxe)') // Album Name
+        .setState('The Weeknd, Ariana Grande') // Artists
+        .setDetails('Die For You (with Ariana Grande) - Remix') // Song name
         .setStartTimestamp(Date.now())
-        .setEndTimestamp(Date.now() + 1_000 * (60*600 + 56)) // Song length = 2m56s
+        .setEndTimestamp(Date.now() + 1_000 * (60*3 + 52)) // Song length = 3m52s
         .setSongId('4PTG3Z6ehGkBFwjybzWkR8') // Song ID
         .setAlbumId('6eUW0wxWtzkFdaEFsTJto6') // Album ID
         .setArtistIds('0gxyHStUsqpMadRV0Di1Qt') // Artist IDs
 client.user.setActivity(r);
+console.log(`${client.user.tag} is online`)
 });
 keepAlive()
 client.login(process.env.TOKEN);
